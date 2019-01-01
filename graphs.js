@@ -60,6 +60,26 @@ equalityIndexFunction (ndx, "#indexScore")
 
 }
         
+        
+         // ---------------GENDER PAY GAP------------------------
+
+        
+        
+
+        var countryDim = ndx.dimension(dc.pluck('country'));
+        var femalePayGap = countryDim.group().reduceSum(dc.pluck('pay_gap'));
+        var genderPayGap = dc.rowChart("#femalePayGap");
+        
+        genderPayGap
+            .width(chartWidth * 4)
+            .height(500)
+            .dimension(countryDim)
+            .group(femalePayGap)
+            .xAxis().ticks(4);
+
+
+
+
 
 
 
