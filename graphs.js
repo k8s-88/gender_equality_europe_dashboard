@@ -23,6 +23,7 @@ function makeGraph(error, transactionsData) {
 
 
 equalityIndexFunction (ndx, "#indexScore")
+EducationFunction (ndx, "#educationByGenderRank")
 
 
 
@@ -80,6 +81,45 @@ equalityIndexFunction (ndx, "#indexScore")
 
 
 
+
+ // ----------------------EDUCATION------------------------------
+
+
+    function EducationFunction (ndx, banana) {
+        
+    let countryDimEducation = ndx.dimension(dc.pluck("country"));
+
+    let femaleTertiary = countryDimEducation.group().reduceSum(dc.pluck("tertiary_f"));
+
+    let maleTertiary = countryDimEducation.group().reduceSum(dc.pluck("tertiary_m"));
+
+    let educationChart = dc.compositeChart(banana);
+
+    educationChart
+        .width(chartWidth * 4)
+        .height(200)
+        .margins({ top: 10, right: 20, bottom: 50, left: 20 })
+        .dimension(countryDimEducation)
+        .x(d3.scale.ordinal())
+        .xUnits(dc.units.ordinal)
+        .group(femaleTertiary)
+        .yAxisLabel("% with Tertiary Level Education")
+        .legend(dc.legend().x(40).y(40).itemHeight(13).gap(5))
+        .compose([
+            dc.barChart(educationChart)
+            .colors("pink")
+            .group(femaleTertiary, "tertiary_f"),
+            dc.barChart(educationChart)
+            .colors("blue")
+            .group(maleTertiary, "tertiary_m")
+        ])
+        
+       
+       
+        .yAxis().ticks(4);
+
+
+}
 
 
 
