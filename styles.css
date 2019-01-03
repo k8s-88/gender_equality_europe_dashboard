@@ -65,11 +65,11 @@ g .x.axis text {
     transform: rotate(300deg);
     font-size: 14px;
     font-weight: bolder;
-
-
 }
 
-
+div.dc-chart {
+    padding-bottom: 60px;
+}
 
 .chart {
 
@@ -101,4 +101,9 @@ svg:not(:root) {
 
 .reset {
     padding: 15px;
+}
+
+
+.graphs {
+    padding-bottom: 20px;
 }

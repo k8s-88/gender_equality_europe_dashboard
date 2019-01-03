@@ -35,81 +35,86 @@
     </nav>
 
     <article class="container">
-        <h1 class="headings"> A Measure of Gender Equality in Europe </h1>
-        <hr>
+        <div class="row graphs">
+            <div class="col-sm-12">
+                <h1 class="headings"> A Measure of Gender Equality in Europe </h1>
+                <hr>
 
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
 
-            <li class="nav-item">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#equalityIndex" role="tab" aria-controls="home" aria-selected="true">EQUALITY INDEX</a>
-            </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#equalityIndex" role="tab" aria-controls="home" aria-selected="true">EQUALITY INDEX</a>
+                    </li>
 
 
-            <li class="nav-item">
-                <a class="nav-link" id="pay-gap" data-toggle="tab" href="#genderPayGap" role="tab" aria-controls="profile" aria-selected="false">GENDER PAY GAP</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="education" data-toggle="tab" href="#educationChart" role="tab" aria-controls="contact" aria-selected="false">EDUCATION</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="management" data-toggle="tab" href="#managementChart" role="tab" aria-controls="contact" aria-selected="false">MANAGEMENT LEVEL EMPLOYEES</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="javascript:dc.filterAll(); dc.renderAll();">RESET ALL</a>
-            </li>
-            <li class="nav-item">
-                <div id="country-select" class="nav-link"></div>
-            </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
+                    <li class="nav-item">
+                        <a class="nav-link" id="pay-gap" data-toggle="tab" href="#genderPayGap" role="tab" aria-controls="profile" aria-selected="false">GENDER PAY GAP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="education" data-toggle="tab" href="#educationChart" role="tab" aria-controls="contact" aria-selected="false">EDUCATION</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="management" data-toggle="tab" href="#managementChart" role="tab" aria-controls="contact" aria-selected="false">MANAGEMENT LEVEL EMPLOYEES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:dc.filterAll(); dc.renderAll();">RESET ALL</a>
+                    </li>
+                    <li class="nav-item">
+                        <div id="country-select" class="nav-link"></div>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
 
-            <div id="equalityIndex" class="tab-pane fade show active" role="tabpanel" aria-labelledby="home-tab">
-                <div class="chart-stage">
-                    <div class="sub-text"> <b>The Gender Equality Index</b> measures gender gaps between women and men. It considers gaps that are to the detriment of either women or men as being equally problematic. The six core domains (work, money, knowledge, time, power
-                        and health) of the Gender Equality Index, assign scores for Member States between 1 for total inequality and 100 for full equality.
-                        <p> We can see from the below graph that Sweden scores the best in terms of equality while Greece scores the worst. Hover over the bars to see exact percentages.</p>
+                    <div id="equalityIndex" class="tab-pane fade show active" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="chart-stage">
+                            <div class="sub-text"> <b>The Gender Equality Index</b> measures gender gaps between women and men. It considers gaps that are to the detriment of either women or men as being equally problematic. The six core domains (work, money, knowledge, time,
+                                power and health) of the Gender Equality Index, assign scores for Member States between 1 for total inequality and 100 for full equality.
+                                <p> We can see from the below graph that Sweden scores the best in terms of equality while Greece scores the worst. Hover over the bars to see exact percentages.</p>
+                            </div>
+                            </br>
+                            <div id="indexScore"></div>
+
+                        </div>
                     </div>
-                    </br>
-                    <div id="indexScore"></div>
+                    <div id="genderPayGap" class="tab-pane fade" role="tabpanel" aria-labelledby="pay-gap">
+                        <div class="chart-stage">
+                            <div class="sub-text"> <b>The Gender Pay Gap Graph</b>, represents the difference between average gross hourly earnings of male and female employees as % of male gross earnings. For example, we can see that women in Estonia are paid 25.3% less than
+                                men per hour on average, while women in in Romania are paid 5.2% less than men on average. Hover over the bars to see exact percentages.</div>
+                            <div id="femalePayGap"></div>
+                        </div>
+                    </div>
+                    <div id="educationChart" class="tab-pane fade" role="tabpanel" aria-labelledby="education">
+                        <div class="chart-stage">
+                            <p class="sub-text"> <b>The Education Graph</b> displays the percentage of males and females with Tertiary level education (any type of education pursued beyond the high school level such as diplomas, undergraduate and graduate certificates, bachelor's,
+                                master's and doctoral degrees.) We can see from this graph that Estonia has the highest level of females with tertiary education. We can also see that they have the biggest disparity between the level of males and females
+                                who are educated to this level. This is particulary interesting when we look at how 97% of people in management positions in Estonia are males and women get paid an average of 25% less than males per hour. Hover over the
+                                bars to see exact percentages.
+                            </p>
+                            <div id="educationByGenderRank"></div>
+                        </div>
+                    </div>
+                    <div id="managementChart" class="tab-pane fade" role="tabpanel" aria-labelledby="management">
+                        <div class="chart-stage">
+                            <p class="sub-text">
+                                <b>Management Level Employees.</b> This graph represents the percentage of Chief Executive Officer and Executive level employees of the largest listed companies in each country, split between males and females. The percentage
+                                of males in these positions are represented by the orange bars while females are the blue bars. Hover over the bars to see the exact pecentage.</p>
+                            <div id="managementByGenderRank"></div>
+                        </div>
+                    </div>
+                </div>
 
-                </div>
+
+
+
+                <!--Content goes here-->
+
+                <div id="indexScore"></div>
+                <div id="femalePayGap"></div>
+                <div id="educationByGenderRank"></div>
+                <div id="managementByGenderRank"></div>
             </div>
-            <div id="genderPayGap" class="tab-pane fade" role="tabpanel" aria-labelledby="pay-gap">
-                <div class="chart-stage">
-                    <div class="sub-text"> <b>The Gender Pay Gap Graph</b>, represents the difference between average gross hourly earnings of male and female employees as % of male gross earnings. For example, we can see that women in Estonia are paid 25.3% less than men per
-                        hour on average, while women in in Romania are paid 5.2% less than men on average. Hover over the bars to see exact percentages.</div>
-                    <div id="femalePayGap"></div>
-                </div>
-            </div>
-            <div id="educationChart" class="tab-pane fade" role="tabpanel" aria-labelledby="education">
-                <div class="chart-stage">
-                    <p class="sub-text"> <b>The Education Graph</b> displays the percentage of males and females with Tertiary level education (any type of education pursued beyond the high school level such as diplomas, undergraduate and graduate certificates, bachelor's,
-                        master's and doctoral degrees.) We can see from this graph that Estonia has the highest level of females with tertiary education. We can also see that they have the biggest disparity between the level of males and females who
-                        are educated to this level. This is particulary interesting when we look at how 97% of people in management positions in Estonia are males and women get paid an average of 25% less than males per hour. Hover over the bars to see exact percentages.
-                    </p>
-                    <div id="educationByGenderRank"></div>
-                </div>
-            </div>
-            <div id="managementChart" class="tab-pane fade" role="tabpanel" aria-labelledby="management">
-                <div class="chart-stage">
-                    <p class="sub-text">
-                        <b>Management Level Employees.</b> This graph represents the percentage of Chief Executive Officer and Executive level employees of the largest listed companies in each country, split between males and females. The percentage of males in these positions are represented by the orange bars while females are the blue bars. Hover over the bars to see the exact pecentage.</p>
-                    <div id="managementByGenderRank"></div>
-                </div>
-            </div>
+
         </div>
-
-
-
-
-        <!--Content goes here-->
-
-        <div id="indexScore"></div>
-        <div id="femalePayGap"></div>
-        <div id="educationByGenderRank"></div>
-        <div id="managementByGenderRank"></div>
-
-
 
 
     </article>
