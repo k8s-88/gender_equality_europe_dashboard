@@ -31,3 +31,74 @@ body {
 
 /*---------------end-nav-------------*/
 
+.headings {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+
+
+/*--------------graphs---------------------*/
+
+a {
+    color: #590e8c;
+}
+
+.sub-text {
+
+    font-size: 1em;
+    padding: 25px;
+
+
+}
+
+.sub-text_questionpage {
+    font-size: 20px;
+    text-align: center
+}
+
+g .x.axis text {
+    text-anchor: end !important;
+    transform: rotate(300deg);
+    font-size: 14px;
+    font-weight: bolder;
+
+
+}
+
+
+
+.chart {
+
+    margin: 20px;
+
+}
+
+svg:not(:root) {
+    overflow: visible;
+}
+
+.graph {
+    padding-bottom: 60px;
+}
+
+.question_title {
+    font-size: 25px;
+}
+
+
+
+
+.questions {
+    margin-bottom: 30px;
+    font-size: 20px;
+    padding-bottom: 50px;
+
+}
+
+.reset {
+    padding: 15px;
+}
