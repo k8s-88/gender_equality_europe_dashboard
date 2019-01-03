@@ -19,6 +19,8 @@ function makeGraph(error, transactionsData) {
     else {
         chartWidth = windowWidth / 5;
     }
+    
+    let height = 400;
 
 
 equalityIndexFunction(ndx, "#indexScore")
@@ -42,7 +44,7 @@ EducationFunction(ndx, "#educationByGenderRank")
 
         equalityIndex
             .width(chartWidth * 4)
-            .height(500)
+            .height(height)
             .margins({ top: 10, right: 20, bottom: 50, left: 50 })
             .colors(equalityIndexcolors)
             .colorAccessor(function(d) {
@@ -67,7 +69,7 @@ EducationFunction(ndx, "#educationByGenderRank")
 
     genderPayGap
         .width(chartWidth * 4)
-        .height(500)
+        .height(height)
         .dimension(countryDim)
         .group(femalePayGap)
         .xAxis().ticks(4);
@@ -92,7 +94,7 @@ EducationFunction(ndx, "#educationByGenderRank")
 
         educationChart
             .width(chartWidth * 4)
-            .height(200)
+            .height(height)
             .margins({ top: 10, right: 20, bottom: 50, left: 20 })
             .dimension(countryDimEducation)
             .x(d3.scale.ordinal())
@@ -120,35 +122,26 @@ EducationFunction(ndx, "#educationByGenderRank")
     // --------------------MANAGEMENT---------------------------------
 
 
-    let countryDimManagement = ndx.dimension(dc.pluck("country"));
+ countryDimManagement = ndx.dimension(dc.pluck("country"));
 
     let femaleCEOs = countryDimManagement.group().reduceSum(dc.pluck("ceo_f"));
 
-    let maleCEOs = countryDimManagement.group().reduceSum(dc.pluck("ceo_m"));
+    var maleCEOs = countryDimManagement.group().reduceSum(
+        function(d) {
+            return 100 - d['ceo_f'];
+        }
+    );
 
-    let managementChart = dc.compositeChart("#managementByGenderRank");
+    var managementChart = dc.barChart("#managementByGenderRank");
 
     managementChart
         .width(chartWidth * 4)
-        .height(500)
-        .margins({ top: 10, right: 20, bottom: 50, left: 20 })
+        .height(height)
         .dimension(countryDimManagement)
+        .group(femaleCEOs)
+        .stack(maleCEOs)
         .x(d3.scale.ordinal())
-        .xUnits(dc.units.ordinal)
-        .group(maleCEOs)
-        .yAxisLabel("% of CEOs")
-        .legend(dc.legend().x(40).y(40).itemHeight(13).gap(5))
-        .compose([
-            dc.barChart(managementChart)
-            .colors("blue")
-            .group(maleCEOs, "ceo_m"),
-            dc.barChart(managementChart)
-            .colors("pink")
-            .group(femaleCEOs, "ceo_f")
-        ])
-
-        .yAxis().ticks(4);
-
+        .xUnits(dc.units.ordinal);
 
 
 // ---------------------------select country box---------------------------------
