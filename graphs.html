@@ -46,16 +46,15 @@
 
 
             <li class="nav-item">
-                <a class="nav-link" id="pay-gap" data-toggle="tab" href="#" role="tab" aria-controls="profile" aria-selected="false">GENDER PAY GAP</a>
+                <a class="nav-link" id="pay-gap" data-toggle="tab" href="#genderPayGap" role="tab" aria-controls="profile" aria-selected="false">GENDER PAY GAP</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="education" data-toggle="tab" href="#" role="tab" aria-controls="contact" aria-selected="false">EDUCATION</a>
+                <a class="nav-link" id="education" data-toggle="tab" href="#educationChart" role="tab" aria-controls="contact" aria-selected="false">EDUCATION</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="management" data-toggle="tab" href="#" role="tab" aria-controls="contact" aria-selected="false">MANAGEMENT LEVEL EMPLOYEES</a>
+                <a class="nav-link" id="management" data-toggle="tab" href="#managementChart" role="tab" aria-controls="contact" aria-selected="false">MANAGEMENT LEVEL EMPLOYEES</a>
             </li>
-
-
+          
         </ul>
         <div class="tab-content" id="myTabContent">
 
@@ -70,27 +69,32 @@
 
                 </div>
             </div>
-            <div id="#" class="tab-pane fade" role="tabpanel" aria-labelledby="#">
-                <div>
-                    <div> TBC </div>
-                    <div id="#"></div>
+            <div id="genderPayGap" class="tab-pane fade" role="tabpanel" aria-labelledby="pay-gap">
+                <div class="chart-stage">
+                    <div class="sub-text"> <b>The Gender Pay Gap Graph</b>, represents the difference between average gross hourly earnings of male and female employees as % of male gross earnings. For example, we can see that women in Estonia are paid 25.3% less than men per
+                        hour on average, while women in in Romania are paid 5.2% less than men on avaerage. </div>
+                    <div id="femalePayGap"></div>
                 </div>
             </div>
-            <div id="#" class="tab-pane fade" role="tabpanel" aria-labelledby="#">
-                <div>
-                    <p> TBC
+            <div id="educationChart" class="tab-pane fade" role="tabpanel" aria-labelledby="education">
+                <div class="chart-stage">
+                    <p class="sub-text"> <b>The Education Graph</b> displays the percentage of males and females with Tertiary level education (any type of education pursued beyond the high school level such as diplomas, undergraduate and graduate certificates, bachelor's,
+                        master's and doctoral degrees.) We can see from this graph that Estonia has the highlighet level of females with tertiary education.We can also see that they have the biggest disparity between the level of males and females who
+                        are educated to this level. This is particulary interesting when we look at how 97% of people in management positions in Estonia are males and women get paid an aaerage of 25% less than males per hour.
                     </p>
-                    <div id="#"></div>
+                    <div id="educationByGenderRank"></div>
                 </div>
             </div>
-            <div id="#" class="tab-pane fade" role="tabpanel" aria-labelledby="#t">
-                <div>
+            <div id="managementChart" class="tab-pane fade" role="tabpanel" aria-labelledby="management">
+                <div class="chart-stage">
                     <p class="sub-text">
-                        TBC
-                        <div id="#"></div>
+                        <b>Management Level Employees.</b> This graph represents the male and female Chief Executive Officers and Executives expressed as a total of these positions within the Largest listed companies in the country.</p>
+                    <div id="managementByGenderRank"></div>
                 </div>
             </div>
         </div>
+
+
 
 
         <!--Content goes here-->
@@ -99,6 +103,8 @@
         <div id="femalePayGap"></div>
         <div id="educationByGenderRank"></div>
         <div id="managementByGenderRank"></div>
+
+
 
 
     </article>
