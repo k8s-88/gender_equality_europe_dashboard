@@ -140,6 +140,7 @@ function makeGraph(error, transactionsData) {
         .width(chartWidth * 4)
         .height(height)
         .dimension(countryDimManagement)
+        .yAxisLabel("Percentage of CEOs and Executives")
         .group(femaleCEOs)
         .stack(maleCEOs)
         .x(d3.scale.ordinal())

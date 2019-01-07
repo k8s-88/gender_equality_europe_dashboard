@@ -33,8 +33,10 @@ function makeGraph(error, transactionsData) {
     question1Chart
         .width(chartWidth * 4)
         .height(height)
+        .margins({ top: 0, right: 0, bottom: 0, left: 50 })
         .dimension(countryDimAgreement)
         .group(Disagree)
+        .yAxisLabel("Responses as a Percentage")
         .stack(Agree)
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal);
@@ -60,8 +62,10 @@ function makeGraph(error, transactionsData) {
     question2Chart
         .width(chartWidth * 4)
         .height(height)
+        .margins({ top:0, right: 0, bottom: 0, left: 50 })
         .dimension(countryDimAgreement2)
         .group(Disagree2)
+        .yAxisLabel("Responses as a Percentage")
         .stack(Agree2)
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal);
@@ -89,8 +93,10 @@ function makeGraph(error, transactionsData) {
     question3Chart
         .width(chartWidth * 4)
         .height(height)
+        .margins({ top:10, right: 0, bottom: 0, left: 50 })
         .dimension(countryDimAgreement3)
         .group(Disagree3)
+        .yAxisLabel("Responses as a Percentage")
         .stack(Agree3)
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal);
@@ -109,8 +115,8 @@ function makeGraph(error, transactionsData) {
     selectField = dc.selectMenu('#country-select')
         .dimension(countryNames)
         .group(numCountryNames);
-        
-        
+
+
 
 
 
