@@ -29,9 +29,9 @@ function makeGraph(error, transactionsData) {
 
     // --------------------EQUALITY INDEX AS BAR CHART------------------------
 
+
+
     function equalityIndexFunction(ndx, banana) {
-
-
 
         let countryDimEqualityIndex = ndx.dimension(dc.pluck("country"));
 
@@ -40,7 +40,6 @@ function makeGraph(error, transactionsData) {
         let equalityIndex = dc.barChart(banana);
 
         let equalityIndexcolors = d3.scale.ordinal().range(["cyan", "lightpink", "lightgreen", "yellow", "lightblue"]);
-
 
         equalityIndex
             .width(chartWidth * 4)
@@ -57,6 +56,7 @@ function makeGraph(error, transactionsData) {
             .xUnits(dc.units.ordinal)
             .elasticY(true)
             .yAxis().ticks(10)
+
 
     }
     // ---------------GENDER PAY GAP------------------------
