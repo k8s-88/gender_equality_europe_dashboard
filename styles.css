@@ -74,11 +74,11 @@ div.dc-chart {
     padding-bottom: 50px;
 }
 
-/*.chart {*/
+.chart {
 
-/*    margin: 20px;*/
+    margin: 20px;
 
-/*}*/
+}
 
 svg:not(:root) {
     overflow: visible;
@@ -124,6 +124,7 @@ svg:not(:root) {
     font-size: 12px;
 
 }
+
 
 
 
