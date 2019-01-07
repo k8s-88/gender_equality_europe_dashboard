@@ -89,10 +89,19 @@ svg:not(:root) {
     font-size: 25px;
 }
 
+.y-label {
+    margin: 20px;
+}
 
 .yAxisLabel {
     padding: 20px;
+    margin-right: 45px
 }
+
+
+
+
+
 
 .questions {
     margin-bottom: 30px;
@@ -123,7 +132,7 @@ svg:not(:root) {
 /*------------home page-------------*/
 
 .intro_heading {
-  
+
     font-family: 'Roboto', sans-serif;
     font-size: 40px;
     padding: 10px;

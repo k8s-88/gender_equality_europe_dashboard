@@ -19,12 +19,12 @@ function makeGraph(error, transactionsData) {
     else {
         chartWidth = windowWidth / 5;
     }
-    
+
     let height = 400;
 
 
-equalityIndexFunction(ndx, "#indexScore")
-EducationFunction(ndx, "#educationByGenderRank")
+    equalityIndexFunction(ndx, "#indexScore")
+    EducationFunction(ndx, "#educationByGenderRank")
 
 
     // --------------------EQUALITY INDEX AS BAR CHART------------------------
@@ -95,13 +95,13 @@ EducationFunction(ndx, "#educationByGenderRank")
         educationChart
             .width(chartWidth * 4)
             .height(height)
-            .margins({ top: 10, right: 20, bottom: 50, left: 20 })
+            .margins({ top: 10, right: 20, bottom: 50, left: 50 })
             .dimension(countryDimEducation)
             .x(d3.scale.ordinal())
             .xUnits(dc.units.ordinal)
             .group(femaleTertiary)
             .yAxisLabel("% with Tertiary Level Education")
-            .legend(dc.legend().x(40).y(40).itemHeight(13).gap(5))
+            .legend(dc.legend().x(70).y(10).itemHeight(13).gap(5))
             .compose([
                 dc.barChart(educationChart)
                 .colors("pink")
@@ -109,6 +109,8 @@ EducationFunction(ndx, "#educationByGenderRank")
                 dc.barChart(educationChart)
                 .colors("blue")
                 .group(maleTertiary, "tertiary_m")
+
+
             ])
 
 
@@ -122,7 +124,7 @@ EducationFunction(ndx, "#educationByGenderRank")
     // --------------------MANAGEMENT---------------------------------
 
 
- countryDimManagement = ndx.dimension(dc.pluck("country"));
+    countryDimManagement = ndx.dimension(dc.pluck("country"));
 
     let femaleCEOs = countryDimManagement.group().reduceSum(dc.pluck("ceo_f"));
 
@@ -144,7 +146,7 @@ EducationFunction(ndx, "#educationByGenderRank")
         .xUnits(dc.units.ordinal);
 
 
-// ---------------------------select country box---------------------------------
+    // ---------------------------select country box---------------------------------
 
     var countryNames = ndx.dimension(function(d) {
         return d["country"];
