@@ -16,5 +16,6 @@ function makeGraph(error, transactionsData) {
 
 
 
+
     dc.renderAll();
 }
