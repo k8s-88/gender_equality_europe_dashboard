@@ -90,7 +90,9 @@ svg:not(:root) {
 }
 
 
-
+.yAxisLabel {
+    padding: 20px;
+}
 
 .questions {
     margin-bottom: 30px;
@@ -106,4 +108,51 @@ svg:not(:root) {
 
 .graphs {
     padding-bottom: 20px;
+}
+
+
+.dc-chart g.row text {
+    fill: black;
+    font-size: 12px;
+
+}
+
+
+
+
+/*------------home page-------------*/
+
+.home_img {
+
+    background-image: url("..media/gender_equality.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: contain;
+    height: 100vw;
+    width: 100vw;
+    margin-bottom: 0px;
+    background-repeat: no-repeat;
+
+}
+
+
+
+
+
+
+
+
+.section-heading {
+    display: inline-block;
+    float: none;
+    margin: 0;
+    margin-bottom: 50px;
+}
+
+
+.section {
+    border-bottom: 1px solid #e6e6e6;
+    padding: 30px 0;
 }

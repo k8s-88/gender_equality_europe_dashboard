@@ -69,10 +69,10 @@ EducationFunction(ndx, "#educationByGenderRank")
 
     genderPayGap
         .width(chartWidth * 4)
-        .height(height)
+        .height(500)
         .dimension(countryDim)
         .group(femalePayGap)
-        .xAxis().ticks(4);
+        .xAxis().ticks(5);
 
 
 
