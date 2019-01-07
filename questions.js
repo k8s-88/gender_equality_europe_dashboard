@@ -97,9 +97,20 @@ function makeGraph(error, transactionsData) {
 
 
 
-    // -----------------------------------------------------------------------
+    // ---------------------------countryselect --------------------------------------------
 
 
+
+    var countryNames = ndx.dimension(function(d) {
+        return d["country"];
+    });
+    var numCountryNames = countryNames.group();
+
+    selectField = dc.selectMenu('#country-select')
+        .dimension(countryNames)
+        .group(numCountryNames);
+        
+        
 
 
 
