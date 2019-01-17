@@ -11,15 +11,15 @@ queue()
 function makeGraph(error, transactionsData) {
     let ndx = crossfilter(transactionsData);
 
-    let chartWidth = 300;
 
     if (windowWidth < 768) {
-        chartWidth = windowWidth;
+        chartWidth = windowWidth / 4;
     }
     else {
         chartWidth = windowWidth / 5;
     }
-
+    
+    
     let height = 400;
 
 
