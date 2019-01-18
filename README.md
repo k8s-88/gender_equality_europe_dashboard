@@ -68,7 +68,7 @@ Manual testing was performed to ensure that the following features worked effect
 
 # Deployment
 
-The site is hosted on github pages.
+The site is hosted on github pages (https://katiemodonnell.github.io/gender_equality_europe_dashboard/).
 
 It is deployed from the master branch.
 
